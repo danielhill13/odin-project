@@ -1,5 +1,5 @@
 //This causes browser to timeout - beware!
-//New to Javascript - this works, but will timeout the browser as it is inefficient. I'll come back to update it later
+//This does not work.
 
 var numtest = 600851475143;
 var array = [];
