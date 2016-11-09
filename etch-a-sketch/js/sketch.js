@@ -1,4 +1,4 @@
-var initialGrid = 32
+var initialGrid = 24
 //Writes and rewrites the table cells
 function writeTable() {
 	for (i = 0; i < initialGrid; i++) {
