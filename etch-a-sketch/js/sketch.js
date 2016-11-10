@@ -1,4 +1,4 @@
-var initialGrid = 24
+var initialGrid = 16
 //Writes and rewrites the table cells
 function writeTable() {
 	for (i = 0; i < initialGrid; i++) {
@@ -17,6 +17,20 @@ $(document).on('mouseover', '.etchtabledata', function() {
 	$(this).css('background-color', '#aaa');
 })
 
+//This randomizes colors
+$(document).on('mouseover', '.randometchtabledata', function() {
+	var R = Math.floor(Math.random() * 256);
+	var G = Math.floor(Math.random() * 256);
+	var B = Math.floor(Math.random() * 256);
+	var color = 'rgb(' + R +","+ G + "," + B + ")";
+	console.log(color);
+	$(this).css('background-color', color);
+});
+
+//$(document).on('mouseover', '.etchtabledata, .randometchtabledata', function() {
+//	$(this).css('opacity', '0.1');
+//});
+
 //Actionizes Clear button, prompts for new grid size, gets new grid
 $('#clear').click(function() {
 	$('.etchrow').remove();
@@ -26,4 +40,10 @@ $('#clear').click(function() {
 	initialGrid = newGrid;
 	writeTable();
 
+});
+
+//Sets class for squares for random colors on hover
+$('#randomcolors').click(function() {
+	$('.etchtabledata').css('background-color', 'initial');
+	$('.etchtabledata').toggleClass('randometchtabledata');
 });
