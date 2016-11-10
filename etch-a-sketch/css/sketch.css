@@ -6,4 +6,12 @@
 	width: 640px;
 	height: 640px;
 	border: 1px dashed #000;
+	margin-left: auto;
+	margin-right: auto;
+}
+#buttondiv {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+
 }

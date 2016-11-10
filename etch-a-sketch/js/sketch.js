@@ -17,20 +17,6 @@ $(document).on('mouseover', '.etchtabledata', function() {
 	$(this).css('background-color', '#aaa');
 })
 
-//This randomizes colors
-$(document).on('mouseover', '.randometchtabledata', function() {
-	var R = Math.floor(Math.random() * 256);
-	var G = Math.floor(Math.random() * 256);
-	var B = Math.floor(Math.random() * 256);
-	var color = 'rgb(' + R +","+ G + "," + B + ")";
-	console.log(color);
-	$(this).css('background-color', color);
-});
-
-//$(document).on('mouseover', '.etchtabledata, .randometchtabledata', function() {
-//	$(this).css('opacity', '0.1');
-//});
-
 //Actionizes Clear button, prompts for new grid size, gets new grid
 $('#clear').click(function() {
 	$('.etchrow').remove();
@@ -47,3 +33,29 @@ $('#randomcolors').click(function() {
 	$('.etchtabledata').css('background-color', 'initial');
 	$('.etchtabledata').toggleClass('randometchtabledata');
 });
+
+//This randomizes colors
+$(document).on('mouseover', '.randometchtabledata', function() {
+	var R = Math.floor(Math.random() * 256);
+	var G = Math.floor(Math.random() * 256);
+	var B = Math.floor(Math.random() * 256);
+	var color = 'rgb(' + R +","+ G + "," + B + ")";
+	console.log(color);
+	$(this).css('background-color', color);
+});
+
+//Sets class for opacity to happen
+$('#opacitybutton').click(function() {
+	$('.etchtabledata').css('background-color', 'initial');
+	$('.randometchtabledata, .etchtabledata').toggleClass('opacitytabledata');
+});
+
+//This increments opacity on each mouseover
+//$(document).on('mouseover', '.opacitytabledata', function() {
+//	var bitDarker = 0;
+//	if (bitDarker < 1) {
+//		bitDarker = bitDarker += 0.1;
+//		$('.opacitytabledata').css('opacity', bitDarker);
+//	}
+//	else{}
+//});
