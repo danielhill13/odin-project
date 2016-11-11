@@ -1,6 +1,7 @@
 .etchtabledata{
 	height: 20px;
 	width: 20px;
+	background-color: #aaa;
 }
 #gridwrapper{
 	width: 640px;

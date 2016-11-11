@@ -12,12 +12,7 @@ function writeTable() {
 };
 writeTable();
 
-//Adds shading functionality
-$(document).on('mouseover', '.etchtabledata', function() {
-	$(this).css('background-color', '#aaa');
-})
-
-//Actionizes Clear button, prompts for new grid size, gets new grid
+//Clear button, prompts for new grid size, gets new grid
 $('#resize').click(function() {
 	$('.etchrow').remove();
 	$('.etchtabledata').remove();
@@ -36,10 +31,23 @@ $('#reset').click(function() {
 
 //Sets class for squares for random colors on hover
 $('#randomcolors').click(function() {
-	$('.etchtabledata').css('background-color', 'initial');
-	$('.etchtabledata, .opacitytabledata').toggleClass('randometchtabledata');
+	$('.etchtabledata').css('background-color', '#aaa');
+	$('.etchtabledata, .opacitytabledata').addClass('randometchtabledata');
 });
 
+//Sets class for opacity to happen
+$('#opacitybutton').click(function() {
+	$('.etchtabledata').css('background-color', '#aaa');
+	$('.randometchtabledata, .etchtabledata').toggleClass('opacitytabledata');
+	$('.opacitytabledata').removeClass('etchtabledata');
+	$('.opacitytabledata').removeClass('randometchtabledata');
+	$('.opacitytabledata').css('background-color', '#aaa');
+});
+
+//Adds basic functionality
+$(document).on('mouseover', '.etchtabledata', function() {
+	$(this).css('background-color', '#fff');
+})
 //This randomizes colors
 $(document).on('mouseover', '.randometchtabledata', function() {
 	var R = Math.floor(Math.random() * 256);
@@ -48,15 +56,6 @@ $(document).on('mouseover', '.randometchtabledata', function() {
 	var color = 'rgb(' + R +","+ G + "," + B + ")";
 	console.log(color);
 	$(this).css('background-color', color);
-});
-
-//Sets class for opacity to happen
-$('#opacitybutton').click(function() {
-	$('.etchtabledata').css('background-color', 'initial');
-	$('.randometchtabledata, .etchtabledata').toggleClass('opacitytabledata');
-	$('.opacitytabledata').removeClass('etchtabledata');
-	$('.opacitytabledata').removeClass('randometchtabledata');
-	$('.opacitytabledata').css('background-color', '#aaa');
 });
 
 //This increments opacity on each mouseover
