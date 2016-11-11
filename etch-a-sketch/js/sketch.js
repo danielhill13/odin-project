@@ -1,3 +1,5 @@
+//Need to come back to de-dupe the button class clears at least.
+
 var initialGrid = 16
 //Writes and rewrites the table cells
 function writeTable() {
