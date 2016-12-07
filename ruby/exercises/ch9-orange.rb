@@ -16,15 +16,15 @@ class OrangeTree
   end
 
   def oneYearPasses
-    # initialize new fruit. Fruit is 5 x treeAge
-    # Increase height. Height is 1.5 x treeAge
     if @treeAge < 15
+      # Make fruit not grow first 3 years
+      # 
       @treeAge = @treeAge + 1
-      @treeHeight = @treeAge * 1.5
-      @fruitBear = @treeAge * 5
+      @treeHeight = @treeAge * 2
+      @fruitBear = @treeAge * 7
       puts 'A year has passed...'
       puts 'The tree is ' + @treeAge.to_s + ' years old.'
-      puts 'The tree is ' + @treeHeight.to_i.to_s + ' feet tall.'
+      puts 'The tree is ' + @treeHeight.to_s + ' feet tall.'
       puts 'This year, the tree bore ' + @fruitBear.to_s + ' oranges for eating.'
     else
       puts 'The tree died of old age'
@@ -41,4 +41,18 @@ end
 tree = OrangeTree.new
 tree.oneYearPasses
 tree.pickAnOrange
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
+tree.oneYearPasses
 tree.oneYearPasses
